@@ -1,6 +1,8 @@
 # hypermeanr
+
 Development of a R function to calculate hypermean.
 
+**Note:** THis is very early version.
 
 ## Hypermean?
 
@@ -63,6 +65,7 @@ How do we apply the kernel distribution, whose support is usually $[-1,1]$, to a
 $$
   z = \frac{(x - E(x))}{\min[x-\min(x),\max(x)-x]}
 $$
+
 Then either minimum or maximum of the trimmed data $x$ will be on the edge of the support of the kernel distribution, and the mean of the kernel is equal to the mean of the data. 
 
 The graphical examples are shown below. The first one is the data generated from standard normal distribution. After trimming, the data is fairly symmetric. By overlaying the kernel distribution using the standardized data $z$, it shows a fair weighting. 
@@ -73,3 +76,18 @@ The second figure below shows the data generated from standard log normal distri
 
 ![Example of applying distribution weight with simulated data. The sample is generated from standard log normal distribution and trimmed by 10%. Epanechnikov kernel is applied for the weight.](https://github.com/keita43a/hypermeanr/blob/master/output/docs/hypermean_files/figure-html/unnamed-chunk-9-1.png?raw=true)
 
+## Use of function
+
+```r
+
+x<-rnorm(1000,0,1)
+
+hypermean(x) # trimmed mean trimming 10% of the sample. 
+
+hypermean(x, size = 0.2) # trimmed mean trimming 20% of the sample
+
+hypermean(x, type = "epa") # weighted mean using Epanechnikov distribution as weight
+
+hypermean(x, ret="vector") # returns the trimmed vector instead of the mean.
+
+```
