@@ -1,0 +1,11 @@
+Package: hypermeanr
+Title: Function to calculate hypermean
+Version: 0.0.0.9000
+Authors@R: 
+    person("Keita", "Abe", , "keita43a@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-1833-3036"))
+Description: Provides a function to calculate hyperman, weighted means with weights that weaken the contribution of those who tend to be far from the normal mean and amplify the contribution of those who tend to be closer to the normal mean.
+License: CC0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0.9000
