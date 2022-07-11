@@ -8,6 +8,14 @@
 \description{
 Provides a function to calculate hyperman, weighted means with weights that weaken the contribution of those who tend to be far from the normal mean and amplify the contribution of those who tend to be closer to the normal mean.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/keita43a/hypermeanr}
+  \item Report bugs at \url{https://github.com/keita43a/hypermeanr/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Keita Abe \email{keita43a@gmail.com} (\href{https://orcid.org/0000-0002-1833-3036}{ORCID})
 
