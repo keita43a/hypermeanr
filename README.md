@@ -2,11 +2,13 @@
 
 Development of a R function to calculate hypermean.
 
-**Note:** THis is very early version.
+**Note:** This is very early version.
 
 ## Hypermean?
 
 **Hypermeans** are weighted means with weights that weaken the contribution of those who tend to be far from the normal mean and amplify the contribution of those who tend to be closer to the normal mean. The idea behind this is the wisdom of crowds, that people who are far from the mean tend to be wrong more than those who are closer to the mean (Feliciani et al. 2022).
+
+The **wisdom of the crowds ** is the idea that the collective opinion of a diverse independent group of individuals rather than that of a single expert (Surowiecki, 2004). This phenomenon is explained by the fact that there is noise inherent in each individual decision, and that taking the average of a large number of responses cancels out some of the effects of this noise (Yi et al., 2012).
 
 There are a series of weighting rules. For exmaples, the rules include trimmed mean (Jose and Winkler 2008), past performance (Budescu & Chen, 2015). Feliciani et al. (2022) uses the correlation (Spearman's $\rho$) between the individuals' and overall rankings of evaluation because the variable of interest is rankings. 
 
@@ -80,8 +82,16 @@ The second figure below shows the data generated from standard log normal distri
 
 ```r
 
+# install
+devtools::install_github("keita43a/hypermeanr")
+
+# load package
+library("hypermeanr")
+
+# random data
 x<-rnorm(1000,0,1)
 
+# hypermeans 
 hypermean(x) # trimmed mean trimming 10% of the sample. 
 
 hypermean(x, size = 0.2) # trimmed mean trimming 20% of the sample
@@ -91,3 +101,16 @@ hypermean(x, type = "epa") # weighted mean using Epanechnikov distribution as we
 hypermean(x, ret="vector") # returns the trimmed vector instead of the mean.
 
 ```
+
+
+## References
+
+Budescu, David V, and Eva Chen. 2015. Identifying Expertise to Extract the Wisdom of Crowds. Management science 61 (2): 267–80.
+
+Feliciani, Thomas, Michael Morreau, Junwen Luo, Pablo Lucas, and Kalpana Shankar. 2022. Designing grant-review panels for better funding decisions: Lessons from an empirically calibrated simulation model. Research policy 51 (4): 104467.
+
+Jose, Victor Richmond R, and Robert L Winkler. 2008. Simple robust averages of forecasts: Some empirical results. International journal of forecasting 24 (1): 163–69.
+
+Surowiecki, James. 2005. The Wisdom of Crowds. Knopf Doubleday Publishing Group.
+
+Yi, Sheng Kung Michael, Mark Steyvers, Michael D Lee, and Matthew J Dry. 2012. The wisdom of the crowd in combinatorial problems. Cognitive science 36 (3): 452–70.
