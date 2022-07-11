@@ -29,7 +29,7 @@ The question is, how much should we trim or Winsorize? Jose and Winkler (2008) r
 
 The figure below is an intuitive example of trimmed and Winsorized averages using simulated data. The data are generated from $X ~ N(0,1)$ and the sample size is 1000. While the raw data follows a normal distribution, the trimmed data loses samples with values far from the mean or median; the Winsorized data has bunching at the same support end as the Trimmed data.
 
-![Examples of trimmed and Winsorized means with simulated data.](/Users/keita/Dropbox/Research/hypermean/output/docs/hypermean_files/figure-html/unnamed-chunk-4-1.png)
+![Examples of trimmed and Winsorized means with simulated data.](/Users/keita/Dropbox/Research/hypermeanr/output/docs/hypermean_files/figure-html/unnamed-chunk-4-1.png)
 
 
 ### Distribution weighting
@@ -52,7 +52,7 @@ The kernel functions are usually distributed over -1 to 1.
 Hence, we need to trim both sides and scale to the support of the observed data. Trimming mean is essentially the kernel weighted mean with uniform distribution.
 
 
-![Common kernel distribution functions](/Users/keita/Dropbox/Research/hypermean/output/docs/hypermean_files/figure-html/unnamed-chunk-6-1.png)
+![Common kernel distribution functions](/Users/keita/Dropbox/Research/hypermeanr/output/docs/hypermean_files/figure-html/unnamed-chunk-6-1.png)
 
 ### Application of distribution weighting  
 
@@ -67,9 +67,9 @@ Then either minimum or maximum of the trimmed data $x$ will be on the edge of th
 
 The graphical examples are shown below. The first one is the data generated from standard normal distribution. After trimming, the data is fairly symmetric. By overlaying the kernel distribution using the standardized data $z$, it shows a fair weighting. 
 
-![Example of applying distribution weight with simulated data. The sample is generated from standard normal distribution and trimmed by 10%. Epanechnikov kernel is applied for the weight.](/Users/keita/Dropbox/Research/hypermean/output/docs/hypermean_files/figure-html/unnamed-chunk-8-1.png)
+![Example of applying distribution weight with simulated data. The sample is generated from standard normal distribution and trimmed by 10%. Epanechnikov kernel is applied for the weight.](/Users/keita/Dropbox/Research/hypermeanr/output/docs/hypermean_files/figure-html/unnamed-chunk-8-1.png)
 
 The second figure below shows the data generated from standard log normal distribution. After trimming, the data is not symmetric. The overlay-ed kernel distribution shows the weighting but the most frequent values are not largely weighted. 
 
-![Example of applying distribution weight with simulated data. The sample is generated from standard log normal distribution and trimmed by 10%. Epanechnikov kernel is applied for the weight.](/Users/keita/Dropbox/Research/hypermean/output/docs/hypermean_files/figure-html/unnamed-chunk-9-1.png)
+![Example of applying distribution weight with simulated data. The sample is generated from standard log normal distribution and trimmed by 10%. Epanechnikov kernel is applied for the weight.](/Users/keita/Dropbox/Research/hypermeanr/output/docs/hypermean_files/figure-html/unnamed-chunk-9-1.png)
 
